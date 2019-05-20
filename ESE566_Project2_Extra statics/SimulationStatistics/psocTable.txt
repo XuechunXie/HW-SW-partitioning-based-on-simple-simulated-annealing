@@ -1,0 +1,134 @@
+cpl A z 4 1 73
+mvi A,[[expr]++] z 10 2 3E
+dec A c,z 4 1 78
+mvi [[expr]++],A 10 2 3F
+adc A,expr c,z 4 2 09
+dec X c,z 4 1 79
+nop 4 1 40
+adc A,[expr] c,z 6 2 0A
+dec [expr] c,z 7 2 7A
+or A,expr z 4 2 29
+adc A,[X+expr] c,z 7 2 0B
+dec [X+expr] c,z 8 2 7B
+or A,[expr] z 6 2 2A
+adc [exp],A c,z 7 2 0C
+inc A c,z 4 1 74
+or A,[X+expr] z 7 2 2B
+adc [X+expr],A c,z 8 2 0D
+inc X c,z 4 1 75
+or [expr],A z 7 2 2C
+adc [expr],expr c,z 9 3 0E
+inc [expr] c,z 7 2 76
+or [X+expr],A z 8 2 2D
+adc [X+expr],expr c,z 10 3 0F
+inc [X+expr] c,z 8 2 77
+or [expr],expr z 9 3 2E
+add A,expr c,z 4 2 01 
+index z 13 2 Fx
+or [X+expr],expr z 10 3 2F
+add A,[expr] c,z 6 2 02 
+jacc 7 2 Ex
+or reg[expr],expr z 9 3 43
+add A,[X+expr] c,z 7 2 03
+jc 5 2 Cx
+or reg[X+expr],expr z 10 3 44
+add [expr],A c,z 7 2 04
+jmp 5 2 8x
+or F,expr c,z 4 2 71
+add [X+expr],A c,z 8 2 05
+jnc 5 2 Dx
+pop X 5 1 20
+add [expr],expr c,z 9 3 06
+jnz 5 2 Bx
+pop A z 5 1 18
+add [X+expr],expr c,z 10 3 0F
+jz 5 2 Ax push X 4 1 10
+add SP,expr 5 2 38 l
+lcall 13 3 7C 
+push A 41 8
+and A,expr z 4 2 21 l
+ljmp 7 3 7D 
+reti c,z 10 1 7e
+and A,[expr] z 6 2 22
+mov X,SP 4 1 4F
+ret 8 1 7F
+and A,[X+expr] z 7 2 23
+mov A,expr z 4 2 50
+rlc A c,z 4 1 6A
+and [exp],A z 7 2 24
+mov A,[expr] z 5 2 51
+rlc [expr] c,z 7 2 6B
+and [X+expr],A z 8 2 25
+mov A,[X+expr] z 6 2 52
+rlc [X+expr] c,z 8 2 6C
+and [expr],expr z 9 3 26
+mov [expr],A 5 2 53 
+romx z 11 1 28
+and [X+expr],expr z 10 3 27
+mov [X+expr],A 6 2 54
+rrc A c,z 4 1 6D
+and F,expr c,z 4 2 70
+mov [expr],expr 8 3 55
+rrc [expr] c,z 7 2 6E
+and reg[expr],expr z 9 3 41
+mov [X+expr],expr 9 3 56
+rrc [X+expr] c,z 8 2 6F
+and reg[X+expr],expr z 10 3 42
+mov X,expr 4 2 57
+sbb A,expr c,z 4 2 19
+asl A c,z 4 1 64
+mov X,[expr] 6 2 58
+sbb A,[expr] c,z 6 2 1A
+asl [expr] c,z 7 2 65
+mov X,[X+expr] 7 2 59
+sbb A,[X+expr] c.z 7 2 1B
+asl [X+expr] c,z 8 2 66
+mov [expr],X 525A
+sbb [expr],A c,z 7 2 1C
+asr A c,z 4 1 67
+mov A,X z 4 1 5B
+sbb [X+expr],A c,z 8 2 1D
+asr [expr] c,z 7 2 68
+mov X,A 4 1 5C
+sbb [expr],expr c,z 9 3 1E
+asr [X+expr] c,z 8 2 69
+mov A,reg[expr] z 6 2 5D
+sbb [X+expr],expr c,z 10 3 1F 
+call 11 2 9x
+mov A,reg[X+expr] z 7 2 5E
+ssc c,z 15 1 00
+cmp A,expr c,z 5 2 39
+mov [expr],[expr] 10 3 5F
+sub A,expr c,z 4 2 11
+cmp A,[expr] c,z 7 3 3A
+mov reg[expr],A 5 2 60
+sub A,[expr] c,z 6 2 12
+cmp A,[X+expr] c,z 8 2 3B
+mov reg[X+expr],A 6 2 61
+sub A,[X+expr] c,z 7 2 13
+cmp [expr],expr c,z 8 3 3C
+mov reg[expr],expr 8 3 62
+sub [expr],A c,z 7 2 14
+cmp [X+expr],expr c,z 9 3 3D
+mov reg[X+expr],expr 9 3 63
+sub [X+expr],A c,z 8 2
+sub [expr],expr c,z 9 3 16
+sub [X+expr],expr c,z 10 3 17
+swap A,X z 5 1 4B
+swap A,[expr] z 7 2 4C
+swap X,[expr] 7 2 5D
+swap A,SP z 5 1 5E
+tst [expr],expr z 8 3 47
+tst [X+expr],expr z 9 3 48
+tst reg[expr],expr z 9 3 49
+tst reg[X+expr],expr z 10 3 4A
+xor F,expr c,z 4 2 72
+xor A,expr z 4 2 31
+xor A,[expr] z 6 2 32
+xor A,[X+expr] z 7 2 33
+xor [expr],A z 7 2 34
+xor [X+expr],A z 8 2 35
+xor [expr],expr z 9 3 36
+xor [X+expr],expr z 10 3 37
+xor reg[expr],expr z 9 3 45
+xor reg[X+expr],expr z 10 3 46

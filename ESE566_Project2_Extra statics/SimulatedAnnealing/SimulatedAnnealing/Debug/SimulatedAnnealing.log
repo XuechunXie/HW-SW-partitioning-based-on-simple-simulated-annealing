@@ -1,0 +1,4 @@
+﻿  SimulatedAnnealing.cpp
+d:\workspace\work\visualcpp\ese566_project2\simulatedannealing\simulatedannealing\simulatedannealing.cpp(151): warning C4101: “W1_E”: 未引用的局部变量
+d:\workspace\work\visualcpp\ese566_project2\simulatedannealing\simulatedannealing\simulatedannealing.cpp(281): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
+  SimulatedAnnealing.vcxproj -> D:\Workspace\Work\VisualCPP\ESE566_Project2\SimulatedAnnealing\Debug\SimulatedAnnealing.exe

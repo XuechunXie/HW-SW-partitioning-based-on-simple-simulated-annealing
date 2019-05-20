@@ -1,0 +1,117 @@
+Node1:
+
+	mov [i],0x00	;i = 0
+
+
+theta:  
+
+	cmp [i],SZ	;i<SZ ;Node2:
+	jnc L4
+
+Node3:
+
+	mov [j],0x00	;j = 0
+
+
+delta:
+
+	cmp [j],SZ	;j<SZ ;Node4:
+	jnc L3
+
+Node5:
+
+	mov [aux],0x00	;aux = 0
+
+Node6:
+
+	cmp [m],L+1	;m=L
+	jnc L2
+
+
+beta:
+
+	mov [n],-L	;n=-L;Node7:
+
+
+alpha:
+
+	cmp [n],L+1	;n <= L;Node9:
+	jnc L1
+
+Node10:
+
+	mov A,[m]	;get a[m][n]
+	mov X,SZ
+	call _mult
+	add A,[n]
+	mov X,A
+	mov A,[_a+X]
+	mov [temp2],A
+Node11:
+	;get F[i+m][j+n]
+	mov A,[j]
+	add A,[n]
+	mov [temp1],A
+	mov A,[i]
+	add A,[m]
+	mov X,SZ
+	call _mult
+	add A,[temp1]
+	mov X,A
+	mov A,[_F+X]
+
+Node12:
+
+	mov X,[temp2]	;F[i+m][j+n]*a[m][n]
+	call _mult
+Node13:
+
+	add [aux],A	;aux += mult
+Node14:
+
+	inc [n]		;n++
+	jmp alpha
+
+L1:
+
+	inc [m]		;m++	;Node15:
+	jmp beta
+
+
+L2:
+
+	mov A,[i]	;store to G[i][j];Node16:   ;L4:    ;stop
+	mov X,SZ
+	call _mult
+	add A,[j]
+	mov X,A
+	mov A,[aux]
+	mov [-G+X],A
+
+Node17:
+
+	inc [j]		;j++
+	jmp delta
+
+
+L3:
+	inc [i]		;i++	;Node18:     ;Node19:
+	jmp theta
+		
+
+
+
+		
+		
+
+
+
+
+
+
+
+
+
+
+
+	
